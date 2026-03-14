@@ -1,0 +1,12 @@
+/* Harry Potter theme: dark magical (burgundy, gold, deep tones) */
+[data-theme="harry-potter"] {
+  --primary-color: #d4af37;
+  --text-color: #e8e0d8;
+  --light-text: #b8a898;
+  --background: #1a0f14;
+  --section-bg: #25181e;
+  --nav-bg: rgba(26, 15, 20, 0.95);
+  --hero-bg: linear-gradient(180deg, #1a0f14 0%, #2d1a24 50%, #1a0f14 100%);
+  --border-color: rgba(212, 175, 55, 0.2);
+  --font-family: 'Cormorant Garamond', 'Georgia', serif;
+}

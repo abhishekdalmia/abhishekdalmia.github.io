@@ -6,6 +6,14 @@
     <title>Abhishek Dalmia - Portfolio</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes/light.css">
+    <link rel="stylesheet" href="themes/dark.css">
+    <link rel="stylesheet" href="themes/star-wars.css">
+    <link rel="stylesheet" href="themes/star-wars-light.css">
+    <link rel="stylesheet" href="themes/harry-potter.css">
+    <link rel="stylesheet" href="themes/harry-potter-light.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -13,9 +21,14 @@
         <div class="nav-content">
             <div class="logo">Abhishek Dalmia</div>
             <div class="nav-right">
-                <button id="theme-toggle" class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
+                <div class="theme-dropdown" id="theme-dropdown">
+                    <button type="button" class="theme-dropdown-trigger" id="theme-dropdown-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose theme">
+                        <i class="fas fa-sun theme-dropdown-trigger-icon" aria-hidden="true"></i>
+                        <span class="theme-dropdown-label">Light</span>
+                        <i class="fas fa-chevron-down theme-dropdown-chevron" aria-hidden="true"></i>
+                    </button>
+                    <div class="theme-dropdown-panel" id="theme-dropdown-panel" role="listbox" hidden></div>
+                </div>
                 <ul class="nav-links">
                     <li><a href="mailto:hi@abhishekdalmia.com"><i class="fas fa-envelope"></i> Email Me</a></li>
                 </ul>
@@ -56,6 +69,8 @@
         </div>
     </footer>
 
+    <script src="themes/config.js"></script>
+    <script src="themes/manager.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

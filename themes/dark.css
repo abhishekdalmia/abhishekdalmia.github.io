@@ -1,0 +1,12 @@
+/* Dark theme */
+[data-theme="dark"] {
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #60a5fa;
+  --text-color: #e5e7eb;
+  --light-text: #d1d5db;
+  --background: #111827;
+  --section-bg: #1f2937;
+  --nav-bg: rgba(17, 24, 39, 0.95);
+  --hero-bg: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  --border-color: rgba(255, 255, 255, 0.1);
+}

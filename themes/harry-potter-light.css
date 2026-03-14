@@ -1,0 +1,12 @@
+/* Harry Potter theme, light variant: parchment and maroon/gold */
+[data-theme="harry-potter-light"] {
+  --primary-color: #740001;
+  --text-color: #2c2420;
+  --light-text: #5c524a;
+  --background: #f4efe6;
+  --section-bg: #ebe4d8;
+  --nav-bg: rgba(244, 239, 230, 0.95);
+  --hero-bg: linear-gradient(180deg, #f4efe6 0%, #e8dfd0 50%, #f4efe6 100%);
+  --border-color: rgba(116, 0, 1, 0.15);
+  --font-family: 'Cormorant Garamond', 'Georgia', serif;
+}

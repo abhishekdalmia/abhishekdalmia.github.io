@@ -1,0 +1,12 @@
+/* Star Wars theme, light variant: same palette, light background */
+[data-theme="star-wars-light"] {
+  --primary-color: #b8860b;
+  --text-color: #2a2a2e;
+  --light-text: #5c5c66;
+  --background: #f5f3ef;
+  --section-bg: #ebe8e2;
+  --nav-bg: rgba(245, 243, 239, 0.95);
+  --hero-bg: linear-gradient(180deg, #f5f3ef 0%, #e8e4dc 50%, #f5f3ef 100%);
+  --border-color: rgba(184, 134, 11, 0.2);
+  --font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}

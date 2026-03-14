@@ -1,0 +1,12 @@
+/* Star Wars theme: cinematic dark with amber/gold accents */
+[data-theme="star-wars"] {
+  --primary-color: #ffd700;
+  --text-color: #e8e0d0;
+  --light-text: #b8a88a;
+  --background: #0a0a0f;
+  --section-bg: #12121a;
+  --nav-bg: rgba(10, 10, 15, 0.95);
+  --hero-bg: linear-gradient(180deg, #0a0a0f 0%, #15152a 50%, #0a0a0f 100%);
+  --border-color: rgba(255, 215, 0, 0.15);
+  --font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
