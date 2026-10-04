@@ -4,7 +4,7 @@
  */
 (function () {
   const STORAGE_KEY = 'theme';
-  const DEFAULT_THEME_ID = 'light';
+  const DEFAULT_THEME_ID = 'dark';
 
   function getThemes() {
     return window.THEMES_CONFIG || [];

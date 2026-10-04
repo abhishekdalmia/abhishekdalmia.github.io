@@ -1,8 +1,8 @@
 # Themes
 
-Themes are applied via `body[data-theme="<id>"]`. Each theme is a single CSS file that overrides the design tokens used in `styles.css`.
+The site has two themes: **Dark** (default) and **Light**. They are applied via `body[data-theme="dark"]` or `body[data-theme="light"]`. Each theme is a CSS file that overrides the design tokens used in `styles.css`.
 
-Branded themes (e.g. Star Wars, Harry Potter) can have both a dark and a light variant (e.g. `star-wars`, `star-wars-light`) so the same look can be used on light or dark backgrounds. The generic **Light** and **Dark** themes stay as the default options.
+The choice is stored in `localStorage` under the key `theme`. A saved theme that is no longer in the registry is ignored, and the site falls back to dark.
 
 ## Adding a new theme
 

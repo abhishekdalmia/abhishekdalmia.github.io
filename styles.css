@@ -102,8 +102,7 @@ body {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
-[data-theme="dark"] .theme-dropdown-trigger:hover,
-[data-theme="star-wars"] .theme-dropdown-trigger:hover {
+[data-theme="dark"] .theme-dropdown-trigger:hover {
     background-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -155,8 +154,7 @@ body {
     color: var(--primary-color);
 }
 
-[data-theme="dark"] .theme-dropdown-option:hover,
-[data-theme="star-wars"] .theme-dropdown-option:hover {
+[data-theme="dark"] .theme-dropdown-option:hover {
     background-color: rgba(255, 255, 255, 0.08);
 }
 

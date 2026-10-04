@@ -1,4 +1,4 @@
-/* Light theme (default). Variables match :root in styles.css for consistency. */
+/* Light theme. Variables match :root in styles.css for consistency. */
 [data-theme="light"] {
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --primary-color: #2563eb;
