@@ -77,95 +77,19 @@ body {
     gap: 1.5rem;
 }
 
-/* Theme dropdown: compact, same footprint as previous toggle */
-.theme-dropdown {
-    position: relative;
-}
-
-.theme-dropdown-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
+/* Icon shows the mode a click will switch to */
+.theme-toggle {
     background: none;
     border: none;
     color: var(--text-color);
     cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.4rem 0.6rem;
-    border-radius: 6px;
-    transition: color 0.2s ease, background-color 0.2s ease;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
 }
 
-.theme-dropdown-trigger:hover {
+.theme-toggle:hover {
     color: var(--primary-color);
-    background-color: rgba(0, 0, 0, 0.04);
-}
-
-[data-theme="dark"] .theme-dropdown-trigger:hover {
-    background-color: rgba(255, 255, 255, 0.06);
-}
-
-.theme-dropdown-trigger-icon {
-    font-size: 1rem;
-}
-
-.theme-dropdown-chevron {
-    font-size: 0.65rem;
-    opacity: 0.8;
-    transition: transform 0.2s ease;
-}
-
-.theme-dropdown-trigger[aria-expanded="true"] .theme-dropdown-chevron {
-    transform: rotate(180deg);
-}
-
-.theme-dropdown-panel {
-    position: absolute;
-    top: calc(100% + 4px);
-    right: 0;
-    min-width: 10rem;
-    padding: 0.25rem;
-    background: var(--section-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1001;
-}
-
-.theme-dropdown-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    background: none;
-    border: none;
-    border-radius: 6px;
-    color: var(--text-color);
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-align: left;
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.theme-dropdown-option:hover {
-    background-color: rgba(0, 0, 0, 0.06);
-    color: var(--primary-color);
-}
-
-[data-theme="dark"] .theme-dropdown-option:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-.theme-dropdown-option[aria-selected="true"] {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.theme-dropdown-option i {
-    width: 1rem;
-    text-align: center;
 }
 
 /* Hero Section */

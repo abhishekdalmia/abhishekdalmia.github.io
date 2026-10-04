@@ -1,5 +1,5 @@
 /**
- * Theme manager: applies theme, persists to localStorage, and initializes the dropdown.
+ * Theme manager: applies theme, persists to localStorage, and initializes the toggle.
  * Depends on THEMES_CONFIG (themes/config.js) and assumes theme CSS is loaded.
  */
 (function () {
@@ -31,80 +31,51 @@
     return getThemes().find(function (t) { return t.id === id; }) || null;
   }
 
-  function initThemeDropdown(triggerId, panelId) {
-    const trigger = document.getElementById(triggerId);
-    const panel = document.getElementById(panelId);
-    if (!trigger || !panel) return;
+  function otherThemeId(themeId) {
+    return themeId === 'dark' ? 'light' : 'dark';
+  }
 
-    const themes = getThemes();
-    const storedId = getStoredThemeId();
-    const initialId = storedId || DEFAULT_THEME_ID;
+  function updateToggle(button, themeId) {
+    var nextId = otherThemeId(themeId);
+    var next = getThemeById(nextId);
+    var icon = next ? next.icon : (nextId === 'dark' ? 'fa-moon' : 'fa-sun');
+    var label = next ? next.label : (nextId === 'dark' ? 'Dark' : 'Light');
+    var text = 'Switch to ' + label.toLowerCase() + ' mode';
+    button.innerHTML = '<i class="fas ' + icon + '" aria-hidden="true"></i>';
+    button.setAttribute('aria-label', text);
+    button.setAttribute('title', text);
+  }
+
+  function initThemeToggle(buttonId) {
+    const button = document.getElementById(buttonId);
+    if (!button) return;
+
+    const initialId = getStoredThemeId() || DEFAULT_THEME_ID;
     applyTheme(initialId);
-    updateTriggerLabel(trigger, getThemeById(initialId));
+    updateToggle(button, initialId);
 
-    panel.innerHTML = '';
-    themes.forEach(function (theme) {
-      const option = document.createElement('button');
-      option.type = 'button';
-      option.role = 'option';
-      option.className = 'theme-dropdown-option';
-      option.dataset.themeId = theme.id;
-      option.setAttribute('aria-selected', theme.id === initialId ? 'true' : 'false');
-      option.innerHTML = '<i class="fas ' + theme.icon + '" aria-hidden="true"></i><span>' + theme.label + '</span>';
-      option.addEventListener('click', function () {
-        selectTheme(theme.id);
-        panel.setAttribute('hidden', '');
-        trigger.setAttribute('aria-expanded', 'false');
-      });
-      panel.appendChild(option);
+    button.addEventListener('click', function () {
+      var current = document.body.getAttribute('data-theme') || DEFAULT_THEME_ID;
+      var next = otherThemeId(current);
+      applyTheme(next);
+      updateToggle(button, next);
     });
-
-    function updateTriggerLabel(tr, theme) {
-      if (!theme) return;
-      var icon = tr.querySelector('.theme-dropdown-trigger-icon');
-      var label = tr.querySelector('.theme-dropdown-label');
-      if (icon) icon.className = 'theme-dropdown-trigger-icon fas ' + theme.icon;
-      if (label) label.textContent = theme.label;
-      panel.querySelectorAll('.theme-dropdown-option').forEach(function (opt) {
-        opt.setAttribute('aria-selected', opt.dataset.themeId === theme.id ? 'true' : 'false');
-      });
-    }
-
-    function selectTheme(themeId) {
-      applyTheme(themeId);
-      updateTriggerLabel(trigger, getThemeById(themeId));
-    }
-
-    trigger.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var isOpen = !panel.hasAttribute('hidden');
-      if (isOpen) {
-        panel.setAttribute('hidden', '');
-        trigger.setAttribute('aria-expanded', 'false');
-      } else {
-        panel.removeAttribute('hidden');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    document.addEventListener('click', function () {
-      panel.setAttribute('hidden', '');
-      trigger.setAttribute('aria-expanded', 'false');
-    });
-    panel.addEventListener('click', function (e) { e.stopPropagation(); });
   }
 
   // Apply stored theme immediately to avoid flash of default theme
   (function applyStoredThemeEarly() {
     var id = getStoredThemeId();
-    if (id) applyTheme(id);
+    if (!id) return;
+    applyTheme(id);
+    var button = document.getElementById('theme-toggle');
+    if (button) updateToggle(button, id);
   })();
 
   window.ThemeManager = {
     applyTheme: applyTheme,
     getStoredThemeId: getStoredThemeId,
     getThemes: getThemes,
-    initThemeDropdown: initThemeDropdown,
+    initThemeToggle: initThemeToggle,
     DEFAULT_THEME_ID: DEFAULT_THEME_ID,
   };
 })();

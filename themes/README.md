@@ -20,4 +20,4 @@ The choice is stored in `localStorage` under the key `theme`. A saved theme that
 3. **Register** the theme in `themes/config.js`: add an entry to the `THEMES` array with `id`, `label`, and `icon` (Font Awesome class, e.g. `fa-star`).
 4. **Load** the CSS in `index.html`: add `<link rel="stylesheet" href="themes/<theme-id>.css">`.
 
-No other code changes are required; the dropdown and persistence are driven by the config.
+The nav button only toggles between dark and light, and it shows the mode a click will switch to. A third theme also needs a change in `themes/manager.js`. Persistence still uses the theme id stored in `localStorage`.

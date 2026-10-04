@@ -28,10 +28,10 @@ function updateSocialLinks() {
     });
 }
 
-// Call the function when the page loads and initialize theme dropdown
+// Call the function when the page loads and initialize theme toggle
 document.addEventListener('DOMContentLoaded', function () {
     updateSocialLinks();
-    if (window.ThemeManager && window.ThemeManager.initThemeDropdown) {
-        ThemeManager.initThemeDropdown('theme-dropdown-trigger', 'theme-dropdown-panel');
+    if (window.ThemeManager && window.ThemeManager.initThemeToggle) {
+        ThemeManager.initThemeToggle('theme-toggle');
     }
 }); 
